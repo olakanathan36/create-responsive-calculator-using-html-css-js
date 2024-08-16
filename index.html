@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator
+
+    </title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <h1>Calculator</h1>
+    <section>
+        <div class="main">
+            <input type="text" class="display">
+
+            <div class="buttons">
+                <button onclick="clearinput('AC')" >AC</button>
+                <button onclick="clearinput('DEL')" >DEL</button>
+                <button onclick="todisplay('%')" >%</button>
+                <button onclick="todisplay('/')" >/</button>
+                <button onclick="todisplay('7')" >7</button>
+                <button onclick="todisplay('8')" >8</button>
+                <button onclick="todisplay('9')" >9</button>
+                <button onclick="todisplay('*')" >*</button>
+                <button onclick="todisplay('4')" >4</button>
+                <button onclick="todisplay('5')" >5</button>
+                <button onclick="todisplay('6')" >6</button>
+                <button onclick="todisplay('-')" >-</button>
+                <button onclick="todisplay('1')" >1</button>
+                <button onclick="todisplay('2')" >2</button>
+                <button onclick="todisplay('3')" >3</button>
+                <button onclick="todisplay('+')" >+</button>
+                <button onclick="todisplay('0')" >0</button>
+                <button onclick="todisplay('00')" >00</button>
+                <button onclick="todisplay('.')" >.</button>
+                <button onclick="calculate('=')" >=</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        const display=document.querySelector('.display');
+        function todisplay(input) {
+            display.value+=input;
+        }
+        function clearinput(){
+            display.value = '';
+        }
+        function calculate(){
+            try{
+                display.value = eval(display.value);
+                }
+                catch(err){
+                    display.value = 'Error';
+                    }
+        }
+    </script>
+</body>
+</html>
